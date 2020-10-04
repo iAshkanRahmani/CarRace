@@ -28,10 +28,12 @@ x_change = 0
 def car(x,y):
     gameDisplay.blit(carimg,(x,y))
 
-crashed = False
+GameExit = False
 
-while not crashed:
+while not GameExit:
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            GameExit = True
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 x_change = -5
