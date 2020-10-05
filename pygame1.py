@@ -1,5 +1,5 @@
 import pygame
-
+import time
 pygame.init()
 
 #colors 
@@ -23,8 +23,22 @@ carimg = pygame.image.load('gg.png')
 
 def car(x,y):
     gameDisplay.blit(carimg,(x,y))
+def text_objects(text,font):
+    textSurface = font.render(text ,True , orange_red)
+    return textSurface , textSurface.get_rect()
+def message_display(text):
+    large_text = pygame.font.Font('freesansbold.ttf',90)
+    TextSurf , TextRect = text_objects(text,large_text)
+    TextRect.center = ((display_width/2),(display_height/2))
+    gameDisplay.blit(TextSurf,TextRect)
+    pygame.display.update()
+    time.sleep(3)
+    game_loop()
+    
+def crash():
+    message_display('! YOU CRASHED !')  
 
-
+car_width = 48
 def game_loop():
     
     x = (display_width * 0.45)
@@ -53,6 +67,10 @@ def game_loop():
         x += x_change          
         gameDisplay.fill(white) 
         car(x,y)   
+        
+        if x > display_width - car_width or x < 0:
+            crash()
+        
         pygame.display.update()
         clock.tick(60)
 
