@@ -21,7 +21,6 @@ clock = pygame.time.Clock()
 carimg = pygame.image.load('gg.png')
 
 
-
 def car(x,y):
     gameDisplay.blit(carimg,(x,y))
 
