@@ -1,5 +1,6 @@
 import pygame
 import time
+import random
 pygame.init()
 
 #colors 
@@ -20,6 +21,8 @@ clock = pygame.time.Clock()
 
 carimg = pygame.image.load('gg.png')
 
+def stuff(stuffx,stuffy,stuffw,stuffh,color):
+    pygame.draw.rect(gameDisplay,color,[stuffx,stuffy,stuffw,stuffh])
 
 def car(x,y):
     gameDisplay.blit(carimg,(x,y))
@@ -46,6 +49,12 @@ def game_loop():
     
     x_change = 0
     
+    stuff_startx = random.randrange(0,display_width)
+    stuff_starty = -600
+    stuff_speed = 7
+    stuff_witdth = 100
+    stuff_height = 100
+    
     GameExit = False
     
     while not GameExit:
@@ -66,11 +75,20 @@ def game_loop():
                 
         x += x_change          
         gameDisplay.fill(white) 
+        
+        #stuff(stuffx,stuffy,stuffw,stuffh,color)
+        stuff(stuff_startx,stuff_starty,stuff_witdth,stuff_height,purple)
+        stuff_starty += stuff_speed
+        
         car(x,y)   
         
         if x > display_width - car_width or x < 0:
             crash()
         
+        if stuff_starty > display_height:
+            stuff_starty = 0 - stuff_height
+            stuff_startx = random.randrange(0,display_width)
+            
         pygame.display.update()
         clock.tick(60)
 
