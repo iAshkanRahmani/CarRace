@@ -9,6 +9,8 @@ blue = (127, 255, 212)
 purple = (138, 43, 226)
 orange_red = (255, 69, 0)
 white = (255,255,255)
+light_steel_blue = (176,196,222)
+
 #display resoulion   ====  width and height for game window
 display_width = 800
 display_height = 600
@@ -51,7 +53,7 @@ def game_loop():
     
     stuff_startx = random.randrange(0,display_width)
     stuff_starty = -600
-    stuff_speed = 7
+    stuff_speed = 8
     stuff_witdth = 100
     stuff_height = 100
     
