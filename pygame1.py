@@ -104,7 +104,7 @@ def game_loop():
             score_counter += 1
             
             if (score_counter % 5 == 0 ):
-                stuff_speed +=1
+                stuff_speed +=1 
             
         if y < stuff_starty + stuff_height:
             print ("Y Rad shod ")
