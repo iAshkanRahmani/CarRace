@@ -103,6 +103,9 @@ def game_loop():
             stuff_startx = random.randrange(0,display_width)
             score_counter += 1
             
+            if (score_counter % 5 == 0 ):
+                stuff_speed +=1
+            
         if y < stuff_starty + stuff_height:
             print ("Y Rad shod ")
             if x > stuff_startx and x < stuff_startx + stuff_witdth or x + car_width > stuff_startx and x + car_width < stuff_startx + stuff_witdth:
