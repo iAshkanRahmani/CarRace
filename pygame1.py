@@ -23,6 +23,10 @@ clock = pygame.time.Clock()
 
 carimg = pygame.image.load('gg.png')
 
+def score(count):
+    font = pygame.font.SysFont(None , 25)
+    text = font.render("Score :"+str(count),True,blue)
+
 def stuff(stuffx,stuffy,stuffw,stuffh,color):
     pygame.draw.rect(gameDisplay,color,[stuffx,stuffy,stuffw,stuffh])
 
@@ -31,6 +35,7 @@ def car(x,y):
 def text_objects(text,font):
     textSurface = font.render(text ,True , orange_red)
     return textSurface , textSurface.get_rect()
+
 def message_display(text):
     large_text = pygame.font.Font('freesansbold.ttf',90)
     TextSurf , TextRect = text_objects(text,large_text)
@@ -91,6 +96,10 @@ def game_loop():
             stuff_starty = 0 - stuff_height
             stuff_startx = random.randrange(0,display_width)
             
+        if y < stuff_starty + stuff_height:
+            print ("Y Rad shod ")
+            if x > stuff_startx and x < stuff_startx + stuff_witdth or x + car_width > stuff_startx and x + car_width < stuff_startx + stuff_witdth:
+                crash()
         pygame.display.update()
         clock.tick(60)
 
