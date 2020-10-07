@@ -10,6 +10,7 @@ purple = (138, 43, 226)
 orange_red = (255, 69, 0)
 white = (255,255,255)
 light_steel_blue = (176,196,222)
+black = (0,0,0)
 
 #display resoulion   ====  width and height for game window
 display_width = 800
@@ -25,7 +26,7 @@ carimg = pygame.image.load('gg.png')
 
 def score(count):
     font = pygame.font.SysFont(None , 25)
-    text = font.render("Score :"+str(count),True,blue)
+    text = font.render("Score :"+str(count),True,black)
     gameDisplay.blit(text,(0,0))
 
 def stuff(stuffx,stuffy,stuffw,stuffh,color):
