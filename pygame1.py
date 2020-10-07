@@ -26,6 +26,7 @@ carimg = pygame.image.load('gg.png')
 def score(count):
     font = pygame.font.SysFont(None , 25)
     text = font.render("Score :"+str(count),True,blue)
+    gameDisplay.blit(text,(0,0))
 
 def stuff(stuffx,stuffy,stuffw,stuffh,color):
     pygame.draw.rect(gameDisplay,color,[stuffx,stuffy,stuffw,stuffh])
@@ -62,6 +63,8 @@ def game_loop():
     stuff_witdth = 100
     stuff_height = 100
     
+    score_counter= 0
+    
     GameExit = False
     
     while not GameExit:
@@ -87,6 +90,8 @@ def game_loop():
         stuff(stuff_startx,stuff_starty,stuff_witdth,stuff_height,purple)
         stuff_starty += stuff_speed
         
+        score(score_counter)
+        
         car(x,y)   
         
         if x > display_width - car_width or x < 0:
@@ -95,6 +100,7 @@ def game_loop():
         if stuff_starty > display_height:
             stuff_starty = 0 - stuff_height
             stuff_startx = random.randrange(0,display_width)
+            score_counter += 1
             
         if y < stuff_starty + stuff_height:
             print ("Y Rad shod ")
