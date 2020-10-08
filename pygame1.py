@@ -26,7 +26,7 @@ carimg = pygame.image.load('gg.png')
 
 def score(count):
     font = pygame.font.SysFont(None , 25)
-    text = font.render("Score :"+str(count),True,black)
+    text = font.render("Score : "+str(count),True,black)
     gameDisplay.blit(text,(0,0))
 
 def stuff(stuffx,stuffy,stuffw,stuffh,color):
@@ -107,7 +107,6 @@ def game_loop():
                 stuff_speed +=1 
             
         if y < stuff_starty + stuff_height:
-            print ("Y Rad shod ")
             if x > stuff_startx and x < stuff_startx + stuff_witdth or x + car_width > stuff_startx and x + car_width < stuff_startx + stuff_witdth:
                 crash()
         pygame.display.update()
