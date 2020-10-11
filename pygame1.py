@@ -22,6 +22,8 @@ pygame.display.set_caption("Python Game Race")
 
 clock = pygame.time.Clock()
 
+
+
 carimg = pygame.image.load('gg.png')
 
 def score(count):
@@ -104,12 +106,15 @@ def game_loop():
             score_counter += 1
             
             if (score_counter % 5 == 0 ):
-                stuff_speed +=1 
+                stuff_speed +=1
+                
+               
+                
             
         if y < stuff_starty + stuff_height:
             if x > stuff_startx and x < stuff_startx + stuff_witdth or x + car_width > stuff_startx and x + car_width < stuff_startx + stuff_witdth:
                 crash()
-        pygame.display.update()
+        pygame.display.update()   
         clock.tick(60)
 
 game_loop()    
