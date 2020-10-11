@@ -2,8 +2,20 @@ Hi :)
 
 My Name is Ashkan 
 
-i think pygame very cool XD
 
-Project Name : C2C
+==============================================
 
-This project is my first game made with the Pygamelibrary
+Required installations :
+                            Python3
+                            Pygame
+             
+==============================================
+
+
+How to Install pygame click this  on link :  https://www.pygame.org/wiki/GettingStarted
+
+
+=============================================
+
+image From Game Environment
+
